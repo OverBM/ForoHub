@@ -1,0 +1,533 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Requests
+meta:
+  id: wrk_5e7c2cd00f1d498c89f0198b251e2ddf
+  created: 1772822006846
+  modified: 1772822006846
+  description: ""
+collection:
+  - url: http://localhost:8081/auth
+    name: Iniciar Sesion
+    meta:
+      id: req_26f83dbf2fae4f7995ff9b1cca4bc7d3
+      created: 1772822102482
+      modified: 1772831081950
+      isPrivate: false
+      description: ""
+      sortKey: -1772825317448
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"correoElectronico": "juan@gmail.com",
+        	"contrasena": "123456"	
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.3.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Topicos
+    meta:
+      id: fld_ca54f9e2c88f4e9eba2c3474afff0453
+      created: 1772825317348
+      modified: 1772825317348
+      sortKey: -1772825317348
+      description: ""
+    children:
+      - url: http://localhost:8081/topicos
+        name: Listar Topico
+        meta:
+          id: req_07d2dfa54de340a19a4bacad82723887
+          created: 1772822010603
+          modified: 1772828004133
+          isPrivate: false
+          description: ""
+          sortKey: -1772825320083
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos
+        name: Registrar Topico
+        meta:
+          id: req_4d2c5baa97824f658ca60266f0d8fee7
+          created: 1772822057498
+          modified: 1772829647347
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319883
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "titulo": "test",
+                "mensaje": "test",
+                "autorId": 99,
+                "cursoId": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos
+        name: Actualizar Topico
+        meta:
+          id: req_be5f9b8b076c4ab1bd4359dd842d3562
+          created: 1772822073234
+          modified: 1772829820400
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319783
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "id": 3,
+                "titulo": "Duda sobre Spring Security actualizada ",
+                "mensaje": "¿Cómo configuro JWT en Spring Boot 3?"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos/1
+        name: Eliminar Topico
+        meta:
+          id: req_54af43ca728e47be92154581dd29203e
+          created: 1772822093799
+          modified: 1772825319710
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319683
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos/3
+        name: Detallar Topico
+        meta:
+          id: req_82f3de106a8c4e628ec6f03871780325
+          created: 1772823091191
+          modified: 1772827478949
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319983
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: false
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Respuestas
+    meta:
+      id: fld_d8aba8437b87482981fdb7ef55911e07
+      created: 1772826784473
+      modified: 1772826784473
+      sortKey: -1772734872614.5
+      description: ""
+    children:
+      - url: http://localhost:8081/topicos/3/respuestas
+        name: Listar Respuesta
+        meta:
+          id: req_c268493e4daa40bd81795b230f268c37
+          created: 1772826784475
+          modified: 1772830371149
+          isPrivate: false
+          description: ""
+          sortKey: -1772825320083
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos/1/respuestas
+        name: Registrar Respuesta
+        meta:
+          id: req_3efef0be07704bb0baa03739b037358f
+          created: 1772826784478
+          modified: 1772829482570
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319883
+        method: POST
+        body:
+          mimeType: application/json
+          text: >
+            {
+                "mensaje": "Para configurar JWT necesitas agregar la dependencia com.auth0 en el pom.xml y crear un TokenService",
+            		"autorId": 3
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos/3/respuestas
+        name: Actualizar Respuesta
+        meta:
+          id: req_cc44360efbf74f11aff891904830d5c4
+          created: 1772826784479
+          modified: 1772830421973
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319783
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+                "id": 2,
+                "mensaje": "Actualizacion: Para configurar JWT necesitas agregar la dependencia com.auth0 en el pom.xml y crear un TokenService",
+                "solucion": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos/3/respuestas/2
+        name: Eliminar Respuesta
+        meta:
+          id: req_25510010b79f44149ffda17c243b268e
+          created: 1772826784481
+          modified: 1772830460488
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319683
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/topicos/3/respuestas/2
+        name: Detallar Respuesta
+        meta:
+          id: req_dd4e0516a0804b3d89d01dc79c76d4ae
+          created: 1772826784482
+          modified: 1772830372410
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319983
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Usuarios
+    meta:
+      id: fld_a33a3975f98b4ffcb76a742f0e140b2e
+      created: 1772826800059
+      modified: 1772826800059
+      sortKey: -1772689650247.75
+      description: ""
+    children:
+      - url: http://localhost:8081/usuarios
+        name: Listar Usuario
+        meta:
+          id: req_9152490dde444f8dba7f3e29c6cbaff5
+          created: 1772826800063
+          modified: 1772831087386
+          isPrivate: false
+          description: ""
+          sortKey: -1772825320083
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: false
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios
+        name: Registrar Usuario
+        meta:
+          id: req_57e3d7e32a3c413ab21c062b63a9293c
+          created: 1772826800065
+          modified: 1772827366727
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319883
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "nombre": "Maria Plan",
+                "correoElectronico": "mariaplan@gmail.com",
+                "contrasena": "123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios
+        name: Actualizar Usuario
+        meta:
+          id: req_fc9e247907c14cb9bd027ebb3ce048e2
+          created: 1772826800067
+          modified: 1772827554195
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319783
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "id": 1,
+                "nombre": "Juan Manchez",
+                "correoElectronico": "juanmanchez@gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios/3
+        name: Eliminar Usuario
+        meta:
+          id: req_bb92667e52354d4da1ecc6d4b60560aa
+          created: 1772826800069
+          modified: 1772827605174
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319683
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: false
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/usuarios/1
+        name: Detallar Usuario
+        meta:
+          id: req_dcf19352dae44f8398724f584335df07
+          created: 1772826800071
+          modified: 1772830482345
+          isPrivate: false
+          description: ""
+          sortKey: -1772825319983
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: "{{ _.Token.bearer }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_aaffb6855d83212a29eeee7c9a1cda77c030d95c
+    created: 1772822006851
+    modified: 1772822006851
+environments:
+  name: Base Environment
+  meta:
+    id: env_aaffb6855d83212a29eeee7c9a1cda77c030d95c
+    created: 1772822006849
+    modified: 1772828602496
+    isPrivate: false
+  data:
+    Token:
+      bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRm9yb0h1YiIsInN1YiI6Imp1YW5AZ21haWwuY29tIiwiZXhwIjoxNzcyODM1NzkyfQ.eIHhOmuwFsadH9dUbaGLjJgYv6PwQjM6lvk7_vPzgIM
