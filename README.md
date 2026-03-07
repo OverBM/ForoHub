@@ -131,12 +131,9 @@ CREATE DATABASE forohub;
 ```
 3. Configurar `src/main/resources/application.properties` para las variables de entorno O Eliminar la parte `${}` y poner directamente tus datos:
 ```properties
-spring.datasource.url=jdbc:mysql://localhost/forohub
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+server.port=8081
 spring.datasource.username=${DBUSERNAME}
 spring.datasource.password=${DBPASSWORD}
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
 api.security.token.secret=${JWT_SECRET}
 ```
 ```
